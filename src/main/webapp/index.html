@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>珠海大台风</title>
+  <link rel="stylesheet" href="css\bootstrap.min.css">
+  <link rel="stylesheet" href="css\main.css">
+</head>
+<body>
+  <div class="navbar navbar-default">
+    <div class="container">
+          <div class="narbar-brand">
+            <img class="logo" src="img/piya.jpg" >
+          </div>
+          <ul class="nav nav-pills">
+            <li class="active">
+              <a href="index.html">首页</a></li>
+            <li><a href="zhuifeng.html">追风</a></li>
+            <li><a href="history.html">历史资料</a></li>
+            <li><a href="#">大貔鸭</a></li>
+
+          </ul>
+      </div>
+  </div>
+  <div class="container">
+      <div class="col-sm-3">
+        <div class="row">
+              <div class="list-group side-bar baiteng">
+                  <div class="list-group-item active">
+                    <p>白藤观测站
+                <button class="btn btn-primary button1" id=login>刷新</button>
+                    </p>
+                  </div>
+                <div id="error"></div>
+                 <div id="updateTime"></div>
+                 <div  id="btmb"></div>
+                 <div  id="btmb1"></div>
+            </div>
+
+                  <div class="list-group side-bar baiteng">
+                      <div class="list-group-item active">
+                        <p>香洲观测站
+                    <button class="btn btn-primary button1" id=login1>刷新</button>
+                        </p>
+                      </div>
+                    <div id="error"></div>
+                     <div id="updateTime1"></div>
+                    <div  id="xzmb"></div>
+                    <div  id="xzmb1"></div>
+                </div>
+              <div class="list-group side-bar baiteng">
+                    <div class="list-group-item active">
+                      <p>板樟观测站
+                  <button class="btn btn-primary button1" id=login2>刷新</button>
+                      </p>
+                    </div>
+                  <div id="error"></div>
+                   <div id="updateTime2"></div>
+                   <div  id="bzmb"></div>
+                   <div  id="bzmb1"></div>
+            </div>
+        <div class="list-group side-bar fengchang">
+               <div class="list-group-item active ">
+                 <p >实时风场<button class="btn btn-primary button1" id=card4>显示</button></p>
+               </div>
+              <div id=card5><iframe  width="285" height="250"  src="https://embed.windy.com/embed2.html?lat=19.891&lon=115.137&zoom=5&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=23.117&detailLon=113.250&metricWind=m%2Fs&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>
+              </div>
+        </div>
+        <div class="list-group side-bar shijing ">
+               <div class="list-group-item active">
+                 <p >天气实景<button class="btn btn-primary button1" id=card>显示</button></p>
+               </div>
+        </div>
+         <div id=card1>
+             <span class="label label-info">香洲</span>
+             <div><img class="bar1" src="http://www.zhmb.org.cn/jeecms/static/common/images/sj5.jpg?" alt=""></div>
+             <span class="label label-info">雷达山</span>
+             <div><img class="bar1" src="http://www.zhmb.org.cn/jeecms/static/common/images/sj4.jpg??" alt=""></div>
+             <span class="label label-info">平沙</span>
+             <div><img class="bar1" src="http://www.zhmb.org.cn/jeecms/static/common/images/sj1.jpg??" alt=""></div>
+         </div>
+      </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="row">
+            <div class="list-group side-bar">
+                <div class="list-group-item active">
+                  <span class="zidongzhan">全市自动站监测实况</span>
+                  <span class="dropdown">
+                  <a class="btn dropdown-toggle shijian" data-toggle="dropdown" href="#">时间选择<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li ><a id='b0'>00</a></li>
+                      <li ><a id='b1'>10</a></li>
+                      <li ><a id='b2'>20</a></li>
+                      <li ><a id='b3'>30</a></li>
+                      <li ><a id='b4'>40</a></li>
+                      <li ><a id='b5'>50</a></li>
+                 </ul>
+                 </span>
+                </div>
+            </div>
+            <div id=time00>
+            <span class="label label-info">实时气温</span>
+            <img class="Temp" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Temp/Plane/zhuhai00.png" alt="">
+            <span class="label label-info">实时雨量</span>
+            <img class="Rain" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Rain/Plane/zhuhai00.png" alt="">
+            <span class="label label-info">实时风速</span>
+            <img class="Wind" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Wind/Plane/zhuhai00.png" alt="">
+          </div>
+          <div id=time10>
+           <span class="label label-info">实时气温</span>
+           <img class="Temp" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Temp/Plane/zhuhai10.png" alt="">
+           <span class="label label-info">实时雨量</span>
+           <img class="Rain" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Rain/Plane/zhuhai10.png" alt="">
+           <span class="label label-info">实时风速</span>
+           <img class="Wind" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Wind/Plane/zhuhai10.png" alt="">
+         </div>
+         <div id=time20>
+          <span class="label label-info">实时气温</span>
+          <img class="Temp" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Temp/Plane/zhuhai20.png" alt="">
+          <span class="label label-info">实时雨量</span>
+          <img class="Rain" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Rain/Plane/zhuhai20.png" alt="">
+          <span class="label label-info">实时风速</span>
+          <img class="Wind" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Wind/Plane/zhuhai20.png" alt="">
+        </div>
+        <div id=time30>
+         <span class="label label-info">实时气温</span>
+         <img class="Temp" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Temp/Plane/zhuhai30.png" alt="">
+         <span class="label label-info">实时雨量</span>
+         <img class="Rain" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Rain/Plane/zhuhai30.png" alt="">
+         <span class="label label-info">实时风速</span>
+         <img class="Wind" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Wind/Plane/zhuhai30.png" alt="">
+       </div>
+       <div id=time40>
+        <span class="label label-info">实时气温</span>
+        <img class="Temp" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Temp/Plane/zhuhai40.png" alt="">
+        <span class="label label-info">实时雨量</span>
+        <img class="Rain" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Rain/Plane/zhuhai40.png" alt="">
+        <span class="label label-info">实时风速</span>
+        <img class="Wind" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Wind/Plane/zhuhai40.png" alt="">
+      </div>
+      <div id=time50>
+       <span class="label label-info">实时气温</span>
+       <img class="Temp" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Temp/Plane/zhuhai50.png" alt="">
+       <span class="label label-info">实时雨量</span>
+       <img class="Rain" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Rain/Plane/zhuhai50.png" alt="">
+       <span class="label label-info">实时风速</span>
+       <img class="Wind" src="http://www.zhmb.org.cn/jeecms/resource/OCX/Wind/Plane/zhuhai50.png" alt="">
+     </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+       <div class="row">
+         <div class="list-group side-bar">
+                <div class="list-group-item active">
+                  <p>实时雷达</p>
+                </div>
+         </div>
+          <span class="label label-info">珠海雷达</span>
+         <img class="Radar" src="http://www.zhmb.org.cn/jeecms/static/ldt/20.jpg?time=15562574408332556" alt="">
+         <span class="label label-info">香港雷达</span>
+        <img class="Radar" src="http://www.weather.org.hk/data/radar3.jpg" alt="">
+        <span class="label label-info">华南雷达</span>
+        <div class='Radar' id='huananRadar'></div>
+        <div class="list-group side-bar ">
+               <div class="list-group-item active ">
+                 <p >集合路径</p>
+               </div>
+               <span class="label label-info">GFS</span>
+        <div  class='Radar' id='modelForecast1'></div>
+        <span class="label label-info">ALL</span>
+         <div  class='Radar' id='modelForecast'></div>
+        </div>
+    </div>
+   </div>
+   </div>
+   <script src="js/jquery.js"></script>
+   <script src="js/bootstrap.js"></script>
+   <script src="js/moment.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>

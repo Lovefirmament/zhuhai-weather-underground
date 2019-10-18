@@ -1,0 +1,108 @@
+.navbar{
+  margin-bottom:15px;
+}
+.logo{
+  width:1125px;
+  height:110px;
+  padding:10px 0 0 0;
+}
+
+.side-bar  .button1{
+  font-size:6px;
+  padding:3px 6px;
+  float:right;
+}
+
+.side-bar .shijian{
+  font-size:8px;
+  font-weight:650;
+  padding:3px 6px;
+  float:none;
+  color:blue;
+}
+
+.navbar-default{
+  background-color: #e3f1fd;
+  border-color:#e3f1fd;
+}
+.list-group{
+  margin-bottom:0;
+  padding:0 5px 0 0;
+}
+.side-bar .list-group-item{
+  height:40px;
+  border:0;
+  border-radius: 3px;
+  background-color:#e3f1fd;
+}
+.zidongzhan,
+.side-bar .list-group-item p{
+  font-size: 15px;
+  color:#000;
+  padding:0px 5px;
+  font-weight:800;
+  font-family:"宋体";
+}
+
+.Temp,
+.Rain,
+.Wind
+{
+  max-width: 450px;
+}
+.Radar{
+  max-width:380px;
+}
+
+.bar1{
+  max-width:280px;
+}
+#updateTime,#updateTime1,#updateTime2{
+padding:3px 0;
+font-size:10px;
+color:#555;
+margin-top: 0px;
+}
+#btmb,#xzmb,#bzmb,#btmb1,#xzmb1,#bzmb1{
+color:#1261e3;
+padding:2px 0;
+font-size:13px;
+font-weight:650;
+font-family:"宋体";
+}
+
+#card1{
+  display:none;
+}
+#card3{
+ display:none;
+}
+#card5{
+ display:none;
+}
+.baiteng{
+  margin-bottom:0px;
+}
+.shijing{
+  margin-top:6px;
+  margin-bottom:6px;
+}
+.天气画廊{
+  max-width:280px;
+}
+
+#time10{
+ display:none;
+}
+#time20{
+ display:none;
+}
+#time30{
+ display:none;
+}
+#time40{
+ display:none;
+}
+#time50{
+ display:none;
+}
