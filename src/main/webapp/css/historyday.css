@@ -1,0 +1,26 @@
+.navbar{
+    margin-bottom:15px;
+}
+.logo{
+    width:1170px;
+    height:130px;
+    padding:10px 0 0 0;
+}
+.navbar-default{
+    background-color: #e3f1fd;
+    border-color:#e3f1fd;
+}
+.datatitle{
+    font-size:24px;
+    font-weight:700;
+
+}
+table{
+    margin-top:10px;
+}
+td,th
+{
+    font-size: 10px;
+    text-align:center;
+    vertical-align:middle  !important;
+}

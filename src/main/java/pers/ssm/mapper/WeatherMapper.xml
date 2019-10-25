@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pers.ssm.mapper.WeatherMapper">
+    <select id="queryWeatherByMonth" resultMap="queryByMonth">
+           select stationInfo.province,stationInfo.stationName,weatherday.*
+           from weatherday,stationInfo
+           where year=#{param1} and month=#{param2} and stationInfo.stationId=weatherday.StationId
+  		</select>
+    <select id="queryWeatherMonthByYear" resultMap="queryWeatherMonthByYear">
+           select stationInfo.province,stationInfo.stationName,weathermonth.*
+           from weathermonth,stationInfo
+           where year=#{param1} and stationInfo.stationId=weathermonth.StationId
+  		</select>
+    <select id="queryWeatherMonthByYearMonth" resultMap="queryWeatherMonthByYearMonth">
+           select stationInfo.province,stationInfo.stationName,weathermonth.*
+           from weathermonth,stationInfo
+           where year=#{param1} and month=#{param2} and stationInfo.stationId=weathermonth.StationId
+  		</select>
+    <select id="queryWeatherYear" resultMap="queryWeatherYear">
+           select stationInfo.province,stationInfo.stationName,weatheryear.*
+           from weatheryear,stationInfo
+           where stationInfo.stationId=weatheryear.StationId
+  	</select>
+    <select id="queryWeatherYearByYear" resultMap="queryWeatherYearByYear">
+           select stationInfo.province,stationInfo.stationName,weatheryear.*
+           from weatheryear,stationInfo
+           where year=#{param1} and stationInfo.stationId=weatheryear.StationId
+  	</select>
+    <resultMap id="queryByMonth" type="pers.ssm.po.Weather">
+        <id column="id" property="id"></id>
+        <result column="stationId" property="stationId"></result>
+        <result column="year" property="year"></result>
+        <result column="month" property="month"></result>
+        <result column="day" property="day"></result>
+        <result column="TEM_AVG" property="temAVG"></result>
+        <result column="TEM_H" property="temH"></result>
+        <result column="TEM_L" property="temL"></result>
+        <result column="PRE" property="pre"></result>
+        <result column="RHU_AVG" property="rhuAVG"></result>
+        <result column="RHU_L" property="rhuL"></result>
+        <result column="SSD" property="ssd"></result>
+        <result column="PRS_AVG" property="prsAVG"></result>
+        <result column="PRS_H" property="prsH"></result>
+        <result column="PRS_L" property="prsL"></result>
+        <result column="WIN_AVG" property="winAVG"></result>
+        <result column="WIN_H" property="winH"></result>
+        <result column="WIN_D" property="winD"></result>
+        <result column="WIN_GUST_H" property="winGustH"></result>
+        <result column="WIN_GUST_D" property="winGustD"></result>
+
+
+        <association property="stationInfo" javaType="pers.ssm.po.StationInfo">
+            <id column="stationId"  property="stationId"></id>
+            <result column="stationId" property="stationId"></result>
+            <result column="province" property="province"></result>
+            <result column="stationName" property="stationName"></result>
+            <result column="latitude" property="latitude"></result>
+            <result column="longitude" property="longitude"></result>
+            <result column="height" property="height"></result>
+
+        </association>
+    </resultMap>
+
+
+    <resultMap id="queryWeatherMonthByYear" type="pers.ssm.po.Weather">
+        <id column="id" property="id"></id>
+        <result column="stationId" property="stationId"></result>
+        <result column="year" property="year"></result>
+        <result column="month" property="month"></result>
+        <result column="TEM_AVG" property="temAVG"></result>
+        <result column="TEM_H" property="temH"></result>
+        <result column="TEM_L" property="temL"></result>
+        <result column="PRE" property="pre"></result>
+        <result column="RHU_AVG" property="rhuAVG"></result>
+        <result column="RHU_L" property="rhuL"></result>
+        <result column="SSD" property="ssd"></result>
+        <result column="PRS_AVG" property="prsAVG"></result>
+        <result column="PRS_H" property="prsH"></result>
+        <result column="PRS_L" property="prsL"></result>
+        <result column="WIN_AVG" property="winAVG"></result>
+        <result column="WIN_H" property="winH"></result>
+        <result column="WIN_GUST_H" property="winGustH"></result>
+
+
+        <association property="stationInfo" javaType="pers.ssm.po.StationInfo">
+            <id column="stationId"  property="stationId"></id>
+            <result column="stationId" property="stationId"></result>
+            <result column="province" property="province"></result>
+            <result column="stationName" property="stationName"></result>
+            <result column="latitude" property="latitude"></result>
+            <result column="longitude" property="longitude"></result>
+            <result column="height" property="height"></result>
+
+        </association>
+    </resultMap>
+
+    <resultMap id="queryWeatherMonthByYearMonth" type="pers.ssm.po.Weather">
+        <id column="id" property="id"></id>
+        <result column="stationId" property="stationId"></result>
+        <result column="year" property="year"></result>
+        <result column="month" property="month"></result>
+        <result column="TEM_AVG" property="temAVG"></result>
+        <result column="TEM_H" property="temH"></result>
+        <result column="TEM_L" property="temL"></result>
+        <result column="PRE" property="pre"></result>
+        <result column="RHU_AVG" property="rhuAVG"></result>
+        <result column="RHU_L" property="rhuL"></result>
+        <result column="SSD" property="ssd"></result>
+        <result column="PRS_AVG" property="prsAVG"></result>
+        <result column="PRS_H" property="prsH"></result>
+        <result column="PRS_L" property="prsL"></result>
+        <result column="WIN_AVG" property="winAVG"></result>
+        <result column="WIN_H" property="winH"></result>
+        <result column="WIN_GUST_H" property="winGustH"></result>
+
+
+        <association property="stationInfo" javaType="pers.ssm.po.StationInfo">
+            <id column="stationId"  property="stationId"></id>
+            <result column="stationId" property="stationId"></result>
+            <result column="province" property="province"></result>
+            <result column="stationName" property="stationName"></result>
+            <result column="latitude" property="latitude"></result>
+            <result column="longitude" property="longitude"></result>
+            <result column="height" property="height"></result>
+
+        </association>
+    </resultMap>
+    <resultMap id="queryWeatherYear" type="pers.ssm.po.Weather">
+        <id column="id" property="id"></id>
+        <result column="stationId" property="stationId"></result>
+        <result column="year" property="year"></result>
+        <result column="TEM_AVG" property="temAVG"></result>
+        <result column="TEM_H" property="temH"></result>
+        <result column="TEM_L" property="temL"></result>
+        <result column="PRE" property="pre"></result>
+        <result column="RHU_AVG" property="rhuAVG"></result>
+        <result column="RHU_L" property="rhuL"></result>
+        <result column="SSD" property="ssd"></result>
+        <result column="PRS_AVG" property="prsAVG"></result>
+        <result column="PRS_H" property="prsH"></result>
+        <result column="PRS_L" property="prsL"></result>
+        <result column="WIN_AVG" property="winAVG"></result>
+        <result column="WIN_H" property="winH"></result>
+        <result column="WIN_GUST_H" property="winGustH"></result>
+
+
+        <association property="stationInfo" javaType="pers.ssm.po.StationInfo">
+            <id column="stationId"  property="stationId"></id>
+            <result column="stationId" property="stationId"></result>
+            <result column="province" property="province"></result>
+            <result column="stationName" property="stationName"></result>
+            <result column="latitude" property="latitude"></result>
+            <result column="longitude" property="longitude"></result>
+            <result column="height" property="height"></result>
+
+        </association>
+    </resultMap>
+
+    <resultMap id="queryWeatherYearByYear" type="pers.ssm.po.Weather">
+        <id column="id" property="id"></id>
+        <result column="stationId" property="stationId"></result>
+        <result column="year" property="year"></result>
+        <result column="TEM_AVG" property="temAVG"></result>
+        <result column="TEM_H" property="temH"></result>
+        <result column="TEM_L" property="temL"></result>
+        <result column="PRE" property="pre"></result>
+        <result column="RHU_AVG" property="rhuAVG"></result>
+        <result column="RHU_L" property="rhuL"></result>
+        <result column="SSD" property="ssd"></result>
+        <result column="PRS_AVG" property="prsAVG"></result>
+        <result column="PRS_H" property="prsH"></result>
+        <result column="PRS_L" property="prsL"></result>
+        <result column="WIN_AVG" property="winAVG"></result>
+        <result column="WIN_H" property="winH"></result>
+        <result column="WIN_GUST_H" property="winGustH"></result>
+
+
+        <association property="stationInfo" javaType="pers.ssm.po.StationInfo">
+            <id column="stationId"  property="stationId"></id>
+            <result column="stationId" property="stationId"></result>
+            <result column="province" property="province"></result>
+            <result column="stationName" property="stationName"></result>
+            <result column="latitude" property="latitude"></result>
+            <result column="longitude" property="longitude"></result>
+            <result column="height" property="height"></result>
+
+        </association>
+    </resultMap>
+</mapper>
