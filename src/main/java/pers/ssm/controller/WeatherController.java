@@ -16,7 +16,7 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
-    @RequestMapping("queryweatherday")
+    @RequestMapping("/queryweatherday")
     public String queryWeatherDay(Model model, HttpServletRequest httpRequest)
     {
         String year=httpRequest.getParameter("year");
@@ -42,7 +42,7 @@ public class WeatherController {
         model.addAttribute("weathermonth",weathermonth);
         return "/jsp/historyday.jsp";
     }
-    @RequestMapping("queryweathermonth")
+    @RequestMapping("/queryweathermonth")
        public String queryWeatherMonth(Model model, HttpServletRequest httpRequest)
     {
         String year=httpRequest.getParameter("year");
@@ -65,7 +65,7 @@ public class WeatherController {
         return "/jsp/historymonth.jsp";
     }
 
-    @RequestMapping("queryweatheryear")
+    @RequestMapping("/queryweatheryear")
     public String queryWeatherYear(Model model, HttpServletRequest httpRequest)
     {
         String stationName=null;
