@@ -10,8 +10,8 @@ public class WeatherServiceImpl implements WeatherService {
     @Autowired
     private WeatherMapper weatherMapper;
     @Override
-    public List<Weather> queryWeatherByMonth(String year, String month) {
-        return  weatherMapper.queryWeatherByMonth(year,month);
+    public List<Weather> queryWeatherDayByYearMonth(String year, String month) {
+        return  weatherMapper.queryWeatherDayByYearMonth(year,month);
     }
     @Override
     public Weather queryWeatherMonthByYearMonth(String year,String month){

@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pers.ssm.mapper.WeatherMapper">
-    <select id="queryWeatherByMonth" resultMap="queryByMonth">
+    <select id="queryWeatherDayByYearMonth" resultMap="queryByMonth">
            select stationInfo.province,stationInfo.stationName,weatherday.*
            from weatherday,stationInfo
            where year=#{param1} and month=#{param2} and stationInfo.stationId=weatherday.StationId

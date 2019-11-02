@@ -17,7 +17,7 @@ public class WeatherMapperTest {
     public void queryWeatherByMonth() {
         ApplicationContext ac=new ClassPathXmlApplicationContext("classpath:spring/applicationContext-dao.xml");
         WeatherMapper weatherMapper= (WeatherMapper) ac.getBean("weatherMapper");
-        List<Weather> weatherList=weatherMapper.queryWeatherByMonth("2018","12");
+        List<Weather> weatherList=weatherMapper.queryWeatherDayByYearMonth("2018","12");
         System.out.println(weatherList);
     }
 
