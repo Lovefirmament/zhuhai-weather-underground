@@ -40,8 +40,12 @@ var vm=new Vue(
               alert("获取失败");
             }
           });
-        }
+        },
     }
   })
 
-
+  Vue.prototype.print = (obj,type) => {
+      type = type || "log";
+      const log = JSON.parse(JSON.stringify(obj));
+      console[type](log)
+  }

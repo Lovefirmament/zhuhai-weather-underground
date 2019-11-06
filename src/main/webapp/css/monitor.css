@@ -1,0 +1,23 @@
+.navbar{
+    margin-bottom:15px;
+}
+.logo{
+    width:1170px;
+    height:130px;
+    padding:10px 0 0 0;
+}
+.navbar-default{
+    background-color: #e3f1fd;
+    border-color:#e3f1fd;
+}
+#map{
+position:absolute;
+width:100%;
+height: 600px;
+top: 20px;
+}
+#temchartshow,#rhuchartshow,#prschartshow,#winchartshow{
+  width: 800px;
+  margin-left: 50px;
+  margin-top: 10px;
+}

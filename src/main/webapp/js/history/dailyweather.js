@@ -49,3 +49,8 @@ var vm=new Vue(
     }
   })
 
+  Vue.prototype.print = (obj,type) => {
+      type = type || "log";
+      const log = JSON.parse(JSON.stringify(obj));
+      console[type](log)
+  }
