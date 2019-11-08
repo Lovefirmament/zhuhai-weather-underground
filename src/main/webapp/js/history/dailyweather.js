@@ -14,7 +14,8 @@ var vm=new Vue(
       $.ajax({
       type: 'GET',
       dataType:'json',
-      url: '../../history/queryweatherday',
+      cache:false,
+      url: '../../history/queryweatherday?'+ new Date().getTime(),
       success: function(data){
           self.weather=data;
     },
@@ -33,7 +34,8 @@ var vm=new Vue(
             var self=this;
             $.ajax({
               type: 'GET',
-              url: '../../history/queryweatherday',
+              url: '../../history/queryweatherday?'+ new Date().getTime(),
+              cache:false,
               data:{
                 'year':self.currentYear,
                 'month':self.currentMonth,
@@ -49,8 +51,3 @@ var vm=new Vue(
     }
   })
 
-  Vue.prototype.print = (obj,type) => {
-      type = type || "log";
-      const log = JSON.parse(JSON.stringify(obj));
-      console[type](log)
-  }
