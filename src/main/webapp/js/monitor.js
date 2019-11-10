@@ -28,6 +28,17 @@ var vm=new Vue(
             winGustH:[],
             winGustL:[],
           },
+          windirList:{
+            windir:[],
+          },
+          preList:{
+            pre:[],
+            preH:[],
+          },
+          preRateList:{
+            preRate:[],
+            preRateH:[],
+          },
           location:[
             {lat:22.13761902,lon:113.33688354,name:'金湾观测站'},
             {lat:22.28580856,lon:113.5638504,name:'香洲观测站'},
@@ -87,81 +98,115 @@ var vm=new Vue(
         }
       })
          },
-          getWeather:function(i){
-            var a=[];
+         getWeather:function(i){
+           var a=[];
+          for(var j=0;j<this.weatherList[i].length;j++)
+              {
+                a[j]=this.weatherList[i][j].metric.tempAvg;
+            }
+           this.temList.tem[i]=a;
+            var tem1=a.slice(0);
+            tem1.sort(
+            function(a,b){
+               return a-b;
+             }
+         )
+            this.temList.temH[i]=tem1[tem1.length-1];
+            this.temList.temL[i]=tem1[0];
+            var b=[];
            for(var j=0;j<this.weatherList[i].length;j++)
                {
-                 a[j]=this.weatherList[i][j].metric.tempAvg;
+                 b[j]=this.weatherList[i][j].humidityAvg;
              }
-            this.temList.tem[i]=a;
-             var tem1=a.slice(0);
-             tem1.sort(
+            this.rhuList.rhu[i]=b;
+             var rhu1=b.slice(0);
+             rhu1.sort(
              function(a,b){
                 return a-b;
               }
           )
-             this.temList.temH[i]=tem1[tem1.length-1];
-             this.temList.temL[i]=tem1[0];
-             var b=[];
+             this.rhuList.rhuH[i]=rhu1[rhu1.length-1];
+             this.rhuList.rhuL[i]=rhu1[0];
+             var c=[];
             for(var j=0;j<this.weatherList[i].length;j++)
                 {
-                  b[j]=this.weatherList[i][j].humidityAvg;
+                  c[j]=this.weatherList[i][j].metric.pressureMin;
               }
-             this.rhuList.rhu[i]=b;
-              var rhu1=b.slice(0);
-              rhu1.sort(
+             this.prsList.prs[i]=c;
+              var prs1=c.slice(0);
+              prs1.sort(
               function(a,b){
                  return a-b;
                }
            )
-              this.rhuList.rhuH[i]=rhu1[rhu1.length-1];
-              this.rhuList.rhuL[i]=rhu1[0];
-              var c=[];
+              this.prsList.prsH[i]=prs1[prs1.length-1];
+              this.prsList.prsL[i]=prs1[0];
+
+              var d=[];
              for(var j=0;j<this.weatherList[i].length;j++)
                  {
-                   c[j]=this.weatherList[i][j].metric.pressureMin;
+                   d[j]=(this.weatherList[i][j].metric.windspeedHigh)/3.6.toFixed(1);
                }
-              this.prsList.prs[i]=c;
-               var prs1=c.slice(0);
-               prs1.sort(
+              this.winList.win[i]=d;
+               var win1=d.slice(0);
+               win1.sort(
                function(a,b){
                   return a-b;
                 }
             )
-               this.prsList.prsH[i]=prs1[prs1.length-1];
-               this.prsList.prsL[i]=prs1[0];
+               this.winList.winH[i]=win1[win1.length-1];
+               this.winList.winL[i]=win1[0];
 
-               var d=[];
+               var e=[];
               for(var j=0;j<this.weatherList[i].length;j++)
                   {
-                    d[j]=(this.weatherList[i][j].metric.windspeedHigh)/3.6.toFixed(1);
+                    e[j]=this.weatherList[i][j].metric.windgustHigh/3.6.toFixed(1);
                 }
-               this.winList.win[i]=d;
-                var win1=d.slice(0);
-                win1.sort(
+               this.winGustList.winGust[i]=e;
+                var winGust1=e.slice(0);
+                winGust1.sort(
                 function(a,b){
                    return a-b;
                  }
              )
-                this.winList.winH[i]=win1[win1.length-1];
-                this.winList.winL[i]=win1[0];
+                this.winGustList.winGustH[i]=winGust1[winGust1.length-1];
+                this.winGustList.winGustL[i]=winGust1[0];
 
-                var e=[];
+                var f=[];
                for(var j=0;j<this.weatherList[i].length;j++)
                    {
-                     e[j]=this.weatherList[i][j].metric.windgustHigh/3.6.toFixed(1);
+                     f[j]=(this.weatherList[i][j].winddirAvg);
                  }
-                this.winGustList.winGust[i]=e;
-                 var winGust1=e.slice(0);
-                 winGust1.sort(
+                this.windirList.windir[i]=f;
+
+                var g=[];
+               for(var j=0;j<this.weatherList[i].length;j++)
+                   {
+                     g[j]=this.weatherList[i][j].metric.precipTotal.toFixed(1);
+                 }
+                this.preList.pre[i]=g;
+                 var pre1=g.slice(0);
+                 pre1.sort(
                  function(a,b){
                     return a-b;
                   }
               )
-                 this.winGustList.winGustH[i]=winGust1[winGust1.length-1];
-                 this.winGustList.winGustL[i]=winGust1[0];
-            },
+                 this.preList.preH[i]=pre1[winGust1.length-1];
 
+                 var h=[];
+                for(var j=0;j<this.weatherList[i].length;j++)
+                    {
+                      h[j]=this.weatherList[i][j].metric.precipRate.toFixed(1);
+                  }
+                 this.preRateList.preRate[i]=h;
+                  var preRate1=h.slice(0);
+                  preRate1.sort(
+                  function(a,b){
+                     return a-b;
+                   }
+               )
+                  this.preRateList.preRateH[i]=preRate1[preRate1.length-1];
+           },
          mapinit:function(){
            var map = new AMap.Map('map', {
                resizeEnable: true, //是否监控地图容器尺寸变化
@@ -260,6 +305,8 @@ var vm=new Vue(
            this.rhuchart(stationIndex);
            this.prschart(stationIndex);
            this.winchart(stationIndex);
+           this.windirchart(stationIndex);
+           this.prechart(stationIndex);
          },
          temchart:function(stationIndex){
            $("#temchart").remove();
@@ -662,6 +709,235 @@ options: {
 }
 }
 });
+},
+windirchart:function(stationIndex){
+  $("#windirchart").remove();
+  $("#windirchartshow").append("<canvas id='windirchart'></canvas>");
+  if(stationIndex==null)
+  stationIndex=0;
+  var time=new Array();
+  var number=new Array(288);
+  var title=this.location[stationIndex].name+" "+this.weatherList[stationIndex][0].obsTimeLocal.substring(0,10);
+  for(var i=0;i<this.weatherList[stationIndex].length;i++)
+  {
+  time[i]=this.weatherList[stationIndex][i].obsTimeLocal;
 }
+ number[0]=0;
+for(var i=1;i<=288;i++)
+{
+   number[i]=i/12;
+}
+  var ctx = document.getElementById('windirchart').getContext('2d');
+  var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'line',
+// The data for our dataset
+data: {
+    labels: number,
+    datasets: [{
+        label:'风向',
+        backgroundColor: "rgba(255,255,255,0.1)",
+        borderColor:"rgba(255,0,0,0)",
+        borderWidth:1,
+        pointBorderColor:"rgba(255,0,0,1)",
+        pointHoverBackgroundColor:"rgba(255,0,0,1)",
+        pointRadius:1,
+        pointBorderWidth:2,
+        pointStyle:'circle',
+        data: this.windirList.windir[stationIndex],
+        yAxisID: 'y-axis1'
+    }
+
+  ]
+},
+// Configuration options go here
+options: {
+  layout: {
+  padding: {
+  left: 0,
+  top: 0,
+  right: 0,
+  bottom: 80,
+  },
+},
+  title:{
+    display:true,
+    text: title+' 风向分布',
+    fontSize:15,
+    fontColor:'#000000',
+  },
+  legend:{
+    display:false,
+  },
+  tooltips: {
+    displayColors:false,
+  callbacks: {
+    title: function(tooltipItem, data) {
+      var i=data['labels'][tooltipItem[0]['index']]*12;
+       return time[i];
+   },
+   label: function(tooltipItem, data) {
+     var label = data.datasets[tooltipItem.datasetIndex].label || '';
+     if (label) {
+       label += ': ';
+     }
+     label += tooltipItem.yLabel;
+     return label+'°';
+   }
+ }
+},
+  scales: {
+    xAxes: [{
+      scaleLabel: {
+            padding:-60,
+            display: true,
+           fontSize:15,
+          },
+      ticks: {
+       maxTicksLimit: 24,
+    }
+  }],
+    yAxes: [{
+      id: 'y-axis1',
+      ticks: {
+        min:0,
+        stepSize:45,
+        max:360,
+        callback: function(value, index, values) {
+            return value+"°";
+        }
+    }
+  }
+
+]
+}
+}
+});
+},
+prechart:function(stationIndex){
+  $("#prechart").remove();
+  $("#prechartshow").append("<canvas id='prechart'></canvas>");
+  if(stationIndex==null)
+  stationIndex=0;
+  var time=new Array();
+  var number=new Array(288);
+  var title=this.location[stationIndex].name+" "+this.weatherList[stationIndex][0].obsTimeLocal.substring(0,10);
+  for(var i=0;i<this.weatherList[stationIndex].length;i++)
+  {
+  time[i]=this.weatherList[stationIndex][i].obsTimeLocal;
+}
+ number[0]=0;
+for(var i=1;i<=288;i++)
+{
+   number[i]=i/12;
+}
+var scalemax;
+if(this.preList.preH[stationIndex]!=this.preRateList.preRateH[stationIndex])
+scalemax=Math.round(Math.max(this.preList.preH[stationIndex],this.preRateList.preRateH[stationIndex]));
+else
+scalemax=Math.round(this.preList.preH[stationIndex]);
+
+  var ctx = document.getElementById('prechart').getContext('2d');
+  var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'line',
+// The data for our dataset
+data: {
+    labels: number,
+    datasets: [{
+        label:'雨量mm',
+        backgroundColor: "rgba(255,255,255,0.1)",
+        borderColor:"rgba(0,0,255,1)",
+        pointBorderColor:"rgba(255,0,0,0)",
+        borderWidth:1,
+        data: this.preList.pre[stationIndex],
+        yAxisID: 'y-axis1'
+    },{
+        label:'雨强mm/h',
+        backgroundColor: "rgba(255,255,255,0.1)",
+        borderColor:"rgba(255,0,0,1)",
+        pointBorderColor:"rgba(255,0,0,0)",
+        borderWidth:1,
+        data: this.preRateList.preRate[stationIndex],
+        yAxisID: 'y-axis2'
+    },
+
+  ]
+},
+// Configuration options go here
+options: {
+  layout: {
+  padding: {
+  left: 0,
+  top: 0,
+  right: 0,
+  bottom: 80,
+  },
+},
+  title:{
+    display:true,
+    text: title+' 降水曲线',
+    fontSize:15,
+    fontColor:'#000000',
+  },
+  legend:{
+    display:false,
+  },
+  tooltips: {
+    displayColors:false,
+  callbacks: {
+    title: function(tooltipItem, data) {
+      var i=data['labels'][tooltipItem[0]['index']]*12;
+       return time[i];
+   },
+   label: function(tooltipItem, data) {
+     var label = data.datasets[tooltipItem.datasetIndex].label. substring(0,2)|| '';
+     if (label) {
+       label += ': ';
+     }
+     label += tooltipItem.yLabel.toFixed(1)+data.datasets[tooltipItem.datasetIndex].label.substring(2);
+     return label;
+   }
+ }
+},
+  scales: {
+    xAxes: [{
+      scaleLabel: {
+            padding:-60,
+            display: true,
+           fontSize:15,
+          labelString: '日雨量:'+this.preList.preH[stationIndex]+ 'mm   最大雨强:'+this.preRateList.preRateH[stationIndex]+"mm/h",
+          },
+      ticks: {
+       maxTicksLimit: 24,
+    }
+  }],
+    yAxes: [{
+      id: 'y-axis1',
+      ticks: {
+        min:0,
+        max:scalemax+10,
+        callback: function(value, index, values) {
+            return value+"mm";
+        }
+    }
+  },
+  {
+    id: 'y-axis2',
+    position:'right',
+    ticks: {
+      min:0,
+      max:10+scalemax,
+      callback: function(value, index, values) {
+          return value+"mm/h";
+      }
+  }
+},
+
+]
+}
+}
+});
+},
      }
   })

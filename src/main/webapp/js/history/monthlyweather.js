@@ -45,4 +45,3 @@ var vm=new Vue(
         },
     }
   })
-

@@ -16,7 +16,7 @@ width:100%;
 height: 600px;
 top: 20px;
 }
-#temchartshow,#rhuchartshow,#prschartshow,#winchartshow{
+#temchartshow,#rhuchartshow,#prschartshow,#winchartshow,#windirchartshow,#prechartshow{
   width: 800px;
   margin-left: 50px;
   margin-top: 10px;
