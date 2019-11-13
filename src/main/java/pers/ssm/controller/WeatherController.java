@@ -2,7 +2,6 @@ package pers.ssm.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,8 +10,6 @@ import pers.ssm.po.Weather;
 import pers.ssm.po.WeatherVo;
 import pers.ssm.service.WeatherService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -45,7 +42,7 @@ public class WeatherController {
     @RequestMapping(value = "/queryweatherday",method = RequestMethod.GET)
     @ResponseBody
     @CrossOrigin
-    public WeatherVo queryweatherDayRestful(String year,String month){
+    public WeatherVo queryweatherDayRestful(String year, String month){
         if(year==null) {
             year = "2018";
         }

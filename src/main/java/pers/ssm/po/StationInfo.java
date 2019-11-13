@@ -1,7 +1,5 @@
 package pers.ssm.po;
 
-import java.util.List;
-
 public class StationInfo {
     private String stationId;
     private String  province;
