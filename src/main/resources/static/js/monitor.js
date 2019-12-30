@@ -55,6 +55,8 @@ var vm=new Vue(
         for(var i=0;i<this.weatherList.length;i++)
         this.getWeather(i);
        this.drawchart(0);
+         console.log(this.prsList.prs);
+         console.log(this.preList.pre);
         },
         methods:
         {

@@ -15,7 +15,7 @@ var vm=new Vue(
       type: 'GET',
       dataType:'json',
       cache:false,
-      url: '../../history/queryweatherday?'+ new Date().getTime(),
+      url: '../../history/dailyweather?'+ new Date().getTime(),
       success: function(data){
           self.weather=data;
     },
@@ -34,7 +34,7 @@ var vm=new Vue(
             var self=this;
             $.ajax({
               type: 'GET',
-              url: '../../history/queryweatherday?'+ new Date().getTime(),
+              url: '../../history/dailyweather?'+ new Date().getTime(),
               cache:false,
               data:{
                 'year':self.currentYear,

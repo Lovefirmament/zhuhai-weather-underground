@@ -1,108 +1,75 @@
-.navbar{
-  margin-bottom:15px;
+body{
+  background-color:#f5f5f5;
+  height:auto;
+}
+
+.container {
+  width: 1080px !important;
+  max-width: none !important;
+  background-color: white;
+  padding:0 0 0 0;
 }
 .logo{
-  width:1170px;
-  height:130px;
-  padding:10px 0 0 0;
+    padding:10px 10px;
+    height:150px;
+    width:100%;
+}
+.head{
+    background-color: #e3f1fd;
+    border-color:#e3f1fd;
 }
 
-.side-bar  .button1{
-  font-size:6px;
-  padding:3px 6px;
-  float:right;
-}
-
-.side-bar .shijian{
-  font-size:8px;
-  font-weight:600;
-  padding:3px 6px;
-  float:none;
-  color:blue;
-}
-
-.navbar-default{
-  background-color: #e3f1fd;
-  border-color:#e3f1fd;
-}
-.list-group{
-  margin-bottom:0;
-  padding:0 5px 0 0;
-}
-.side-bar .list-group-item{
-  height:40px;
+.list-group .list-group-item{
   border:0;
   border-radius: 3px;
   background-color:#e3f1fd;
 }
-.zidongzhan,
-.side-bar .list-group-item p{
+.title{
   font-size: 15px;
   color:#000;
-  padding:0px 5px;
   font-weight:800;
   font-family:"宋体";
 }
-
-.Temp,
-.Rain,
-.Wind
-{
-  max-width: 450px;
+.warning{
+  margin:10px 0;
+  font-size: 15px;
+  color:#000;
+  font-weight:800;
+  font-family:"楷体";
 }
-.Radar{
-  max-width:380px;
+/*预报板块样式*/
+.forecast{
+  margin:5px 0;
+  font-size: 15px;
+  color:#000;
+  font-family:"楷体";
 }
-
-.bar1{
-  max-width:280px;
-}
-#updateTime,#updateTime1,#updateTime2{
-padding:3px 0;
-font-size:10px;
-color:#555;
-margin-top: 0px;
-}
-#btmb,#xzmb,#bzmb,#btmb1,#xzmb1,#bzmb1{
-color:#1261e3;
-padding:2px 0;
-font-size:13px;
-font-weight:650;
-font-family:"宋体";
+.condition{
+  margin:5px 0;
+  font-size: 15px;
+  color:#000;
+  font-family:"楷体";
 }
 
-#card1{
-  display:none;
+#conditionTitle{
+  margin:5px 0;
+  font-size: 15px;
+  font-weight: 800;
+  color:#000;
+  font-family:"楷体";
 }
-#card3{
- display:none;
+.col-sm-5{
+  padding:0 0;
 }
-#card5{
- display:none;
+.weatherCondition{
+  width:100%;
 }
-.baiteng{
-  margin-bottom:0px;
+.weatherPicture{
+  width:100%;
 }
-.shijing{
-  margin-top:6px;
-  margin-bottom:6px;
+.dropdown{
+  float: right;
 }
-.天气画廊{
-  max-width:280px;
-}
-
-#time10{
- display:none;
-}
-#time20{
- display:none;
-}
-#time30{
- display:none;
-}
-#time40{
- display:none;
-}
-#time50{
- display:none;
+.radar{
+  width:100%;
 }

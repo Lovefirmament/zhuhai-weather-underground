@@ -13,7 +13,7 @@ var vm=new Vue(
       type: 'GET',
       dataType:'json',
       cache:false,
-      url: '../../history/queryweathermonth?'+ new Date().getTime(),
+      url: '../../history/monthlyweather?'+ new Date().getTime(),
       success: function(data){
           self.weather=data;
     },
@@ -31,7 +31,7 @@ var vm=new Vue(
             $.ajax({
               type: 'GET',
               cache:false,
-              url: '../../history/queryweathermonth?'+ new Date().getTime(),
+              url: '../../history/monthlyweather?'+ new Date().getTime(),
               data:{
                 'year':self.currentYear,
               },

@@ -18,14 +18,14 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
-    @RequestMapping(value = "/queryweatheryear",method = RequestMethod.GET)
+    @RequestMapping(value = "/yearlyweather",method = RequestMethod.GET)
     @ResponseBody
     @CrossOrigin
             public List<Weather> queryweatheryearRestful(){
         List<Weather> waetheryear=weatherService.queryWeatherYear();
         return waetheryear;
     }
-    @RequestMapping(value = "/queryweathermonth",method = RequestMethod.GET)
+    @RequestMapping(value = "/monthlyweather",method = RequestMethod.GET)
     @ResponseBody
     @CrossOrigin
     public WeatherVo queryweatherMonthRestful(String year){
@@ -39,7 +39,7 @@ public class WeatherController {
         weatherVo.setWeatheryear(weatheryear);
         return weatherVo;
     }
-    @RequestMapping(value = "/queryweatherday",method = RequestMethod.GET)
+    @RequestMapping(value = "/dailyweather",method = RequestMethod.GET)
     @ResponseBody
     @CrossOrigin
     public WeatherVo queryweatherDayRestful(String year, String month){
