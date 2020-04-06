@@ -29,6 +29,9 @@ body{
 table{
     margin-top:10px;
 }
+#tablecontainer{
+    padding-right:25px;
+}
 td,th
 {
     font-size: 10px;

@@ -30,7 +30,7 @@ public class WeatherController {
     @CrossOrigin
     public WeatherVo queryweatherMonthRestful(String year){
         if(year==null) {
-            year = "2018";
+            year = "2019";
         }
         List<Weather> weathermonthList=weatherService.queryWeatherMonthByYear(year);
         Weather weatheryear=weatherService.queryWeatherYearByYear(year);
@@ -44,7 +44,7 @@ public class WeatherController {
     @CrossOrigin
     public WeatherVo queryweatherDayRestful(String year, String month){
         if(year==null) {
-            year = "2018";
+            year = "2019";
         }
         if(month==null) {
             month = "12";

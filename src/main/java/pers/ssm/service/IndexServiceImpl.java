@@ -138,7 +138,6 @@ public class IndexServiceImpl implements IndexService{
             Element aqi = document.getElementById("aqi");
             if(aqi!=null)
                 conditionList.add(aqi.children().text());
-
             Element humidity = document.getElementById("realHumidity");
             conditionList.add(humidity.text());
             Element feelst= document.getElementById("realFeelst");

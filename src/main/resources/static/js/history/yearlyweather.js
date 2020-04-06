@@ -9,7 +9,7 @@ var vm=new Vue(
       $.ajax({
         type: 'GET',
         dataType:'json',
-        url: '../../history/yearlyweather?'+ new Date().getTime(),
+        url: '../../history/yearlyweather?time='+ new Date().getTime(),
         success: function(data){
             self.weatherLists=data;
       },

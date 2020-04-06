@@ -6,7 +6,7 @@ var vm=new Vue(
        ],
       yearLists:[ ],
       monthLists:[],
-      currentYear:'2018',
+      currentYear:'2019',
       currentMonth:'12'
   },
     created:function(){
@@ -14,8 +14,7 @@ var vm=new Vue(
       $.ajax({
       type: 'GET',
       dataType:'json',
-      cache:false,
-      url: '../../history/dailyweather?'+ new Date().getTime(),
+      url: '../../history/dailyweather?time='+ new Date().getTime(),
       success: function(data){
           self.weather=data;
     },
@@ -23,7 +22,7 @@ var vm=new Vue(
       alert("获取失败");
     }
   });
-    for(var i=1961;i<=2018;i++)
+    for(var i=1961;i<=2019;i++)
     this.yearLists[i-1961]=i;
     for(var i=1;i<=12;i++)
     this.monthLists[i]=i;
@@ -34,8 +33,7 @@ var vm=new Vue(
             var self=this;
             $.ajax({
               type: 'GET',
-              url: '../../history/dailyweather?'+ new Date().getTime(),
-              cache:false,
+              url: '../../history/dailyweather?time='+ new Date().getTime(),
               data:{
                 'year':self.currentYear,
                 'month':self.currentMonth,

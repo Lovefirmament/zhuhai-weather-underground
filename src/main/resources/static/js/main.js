@@ -12,6 +12,7 @@ var vm=new Vue(
         day:"",
         hour:"",
         minute:"",
+        timestamp:""
       }
   },
     created:function(){
@@ -26,7 +27,7 @@ var vm=new Vue(
       type: 'GET',
       dataType:'json',
       cache:false,
-      url: './index/weatherinfo?'+ new Date().getTime(),
+      url: './index/weatherinfo?time='+ new Date().getTime(),
       success: function(data){
         console.log(data);
           self.warningList=data.warning;
@@ -42,6 +43,7 @@ var vm=new Vue(
         this.detectTime=time;
     },
     getRadarTime:function(){
+      this.radarTime.timestamp=new Date().getTime();
       var date=moment().subtract(8,'hour').subtract(18,'minute').format();// 结果：moment("2019-06-24T13:19:48+08:00")
       this.radarTime.year=date.substring(0,4); //获取当前时间
       this.radarTime.month=date.substring(5,7);

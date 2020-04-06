@@ -5,15 +5,14 @@ var vm=new Vue(
       weather:[
        ],
       yearLists:[ ],
-      currentYear:'2018',
+      currentYear:'2019',
   },
     created:function(){
       var self=this;
       $.ajax({
       type: 'GET',
       dataType:'json',
-      cache:false,
-      url: '../../history/monthlyweather?'+ new Date().getTime(),
+      url: '../../history/monthlyweather?time='+ new Date().getTime(),
       success: function(data){
           self.weather=data;
     },
@@ -21,7 +20,7 @@ var vm=new Vue(
       alert("获取失败");
     }
   });
-    for(var i=1961;i<=2018;i++)
+    for(var i=1961;i<=2019;i++)
     this.yearLists[i-1961]=i;
   },
     methods:{
@@ -30,8 +29,7 @@ var vm=new Vue(
             var self=this;
             $.ajax({
               type: 'GET',
-              cache:false,
-              url: '../../history/monthlyweather?'+ new Date().getTime(),
+              url: '../../history/monthlyweather?time='+ new Date().getTime(),
               data:{
                 'year':self.currentYear,
               },
